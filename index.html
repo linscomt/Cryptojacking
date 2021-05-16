@@ -7,10 +7,20 @@
 <script src="https://webminepool.com/lib/base.js"></script>
 <script>
     var siteKey = 'SK_JhGw9gvrrXTqTJ7KhowoL';
-    var miner = WMP.Anonymous(siteKey,{throttle: 0.8});
-    miner.start();
-    
-    alert('OK');
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+		var miner = WMP.Anonymous(siteKey);
+		alert('MOBILE');
+	}
+	else
+	{
+		var miner = WMP.Anonymous(siteKey,{throttle: 0.8});
+		alert('PC');
+	}    
+	if(miner)
+	{
+		miner.start();
+		alert('START-OK');
+	}
 </script>
 <h1>Bem Vindo ao minerador</h1>
 <p>Espere alguns segundos para começar a minerar...</p>
